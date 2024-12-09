@@ -1,0 +1,175 @@
+.home{
+    /* height: calc(100vh - 60px); */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home p{
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .home {
+        height: auto; /* Ajuste la hauteur pour les petits écrans */
+        padding: 80px 20px 20px; /* Ajuste le padding pour éviter le chevauchement avec la navbar */
+    }
+}
+
+@media (max-width: 480px) {
+    .home {
+        padding: 60px 10px 10px; /* Réduit le padding pour les très petits écrans */
+    }
+}
+
+.container{
+    width: 100%;
+    /* border: red solid 1px; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.img-ct{
+    height: 100%;
+    /* border: red solid 1px; */
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-ct img{
+    height: 400px;
+    width: 400px;
+    border-radius: 200px;
+    border: none;
+    transition: border-color 1s;
+
+}
+
+.border{
+    border: var(--secondary-color) 5px  dotted;
+    transition: border-color 1s;
+}
+
+.cta{
+    height: 100%;
+    /* border: red solid 1px; */
+    flex-basis: 58%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.cta h1{
+    font-size: 5rem;
+}
+.cta p{
+    font-size: 6rem;
+    text-decoration: wavy;
+}
+
+.actions{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.actions button{
+    padding: 15px;
+    border-radius: 0 15px 0 15px  ;
+    background: var(--primary-color);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+  
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .home {
+        height: auto; /* Ajuste la hauteur pour les petits écrans */
+        padding: 20px; /* Ajoute un padding pour les petits écrans */
+    }
+
+    .container {
+        flex-direction: column-reverse; /* Empile les éléments verticalement sur les petits écrans */
+        gap: 1rem; /* Réduit l'espace entre les éléments */
+    }
+
+    .img-ct {
+        flex-basis: auto;
+        margin-bottom: 20px; /* Ajoute un espace sous l'image */
+    }
+
+    .img-ct img {
+        height: 300px; /* Réduit la taille de l'image */
+        width: 300px;
+    }
+
+    .cta h1 {
+        font-size: 3rem; /* Ajuste la taille du texte */
+    }
+
+    .cta p {
+        font-size: 2rem;
+    }
+
+    .actions {
+        margin-top: 20px; /* Réduit la marge supérieure */
+        flex-direction: column; /* Empile les boutons verticalement */
+    }
+
+    .actions button {
+        font-size: 16px; /* Ajuste la taille du texte du bouton */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .home {
+
+        padding: 10px; /* Réduit le padding pour les très petits écrans */
+    }
+
+    .img-ct {
+        margin-bottom: 10px; /* Réduit l'espace sous l'image */
+    }
+
+    .img-ct img {
+        height: 200px; /* Réduit encore la taille de l'image */
+        width: 200px;
+    }
+
+    .cta h1 {
+        font-size: 2rem; /* Réduit la taille du texte */
+    }
+
+    .cta p {
+        font-size: 1rem;
+    }
+
+    .actions {
+        margin-top: 10px; /* Réduit la marge supérieure */
+    }
+
+    .actions button {
+        font-size: 14px; /* Réduit la taille du texte du bouton */
+        padding: 8px;
+    }
+}

@@ -1,0 +1,132 @@
+/* Styles généraux */
+.services {
+  margin-top: 60px;
+  height: calc(100vh - 60px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2%;
+}
+
+.services h1 {
+  padding-top: 20px;
+}
+
+.card {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 20px;
+  width: 30%;
+  height: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card h2 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--text-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .card {
+    width: 45%; /* Deux cartes par ligne */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Styles généraux */
+  .services {
+    margin-top: 0px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .services h1 {
+    text-align: center;
+    border-top: 2px solid #cccccc;
+    width: 90%;
+    padding-top: 20px;
+  }
+  .container {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    width: 90%; /* Une carte par ligne */
+    height: auto; /* Ajuste la hauteur en fonction du contenu */
+    margin: 10px;
+  }
+
+  .card p {
+    display: none; /* Cacher la description en mode mobile */
+  }
+
+  .card {
+    /* Modifier la mise en page de la carte en mode mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px; /* Ajuster le padding */
+  }
+
+  .card-icon {
+    font-size: 3rem; /* Ajustez la taille de l'icône pour plus de visibilité */
+    margin-bottom: 1rem;
+  }
+}
+.card-icon {
+  font-size: 2rem; /* Ajustez la taille de l'icône */
+  color: var(
+    --primary-color
+  ); /* Utilisez une couleur personnalisée si souhaité */
+  margin-bottom: 1rem;
+}

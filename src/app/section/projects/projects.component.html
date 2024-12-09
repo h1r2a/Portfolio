@@ -1,0 +1,16 @@
+<div class="projects">
+  <span class="bar"></span>
+  <div class="container">
+    <h1>My Latest Works <fa-icon [icon]="faArrowAltCircleDown"></fa-icon></h1>
+    <div class="projectList">
+      <div class="project" *ngFor="let project of projects">
+        <img src="{{ project.img }}" alt="" />
+        <div class="info">
+          <h3 class="name">{{ project.name }}</h3>
+          <button><fa-icon size="lg" [icon]="faGithub"></fa-icon></button>
+        </div>
+      </div>
+    </div>
+    <h2>See more projects on my GitHub <span></span><fa-icon size="2x" [icon]="faGithub"></fa-icon></h2>
+  </div>
+</div>

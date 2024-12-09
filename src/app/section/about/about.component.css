@@ -1,0 +1,326 @@
+/* Styles globaux pour les cercles de progression */
+.progress-circle {
+  position: relative;
+  width: 80px; /* Ajuste la largeur du cercle */
+  height: 80px; /* Ajuste la hauteur du cercle */
+}
+
+.circle-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* Rotation pour commencer le cercle en haut */
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 10;
+}
+
+.circle-progress {
+  fill: none;
+  stroke: var(--primary-color);
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease, stroke-dashoffset 0.3s ease;
+}
+
+.skill-logo,
+.framework-logo,
+.db-logo {
+  width: 40px; /* Ajuste la largeur du logo */
+  height: 40px; /* Ajuste la hauteur du logo */
+  object-fit: contain;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h4 {
+  margin-top: 10px;
+  color: var(--text-color);
+}
+
+/* Styles spécifiques à la section .about */
+.about {
+  margin-top: 60px;
+  height: calc(100vh - 60px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.about h1 {
+  margin-top: 20px;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2%;
+}
+
+.left,
+.right {
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  flex-basis: 40%;
+  position: relative;
+}
+
+.left::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  width: 10px;
+  height: 80%;
+  background: var(--primary-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.image {
+
+  flex-basis: 30%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.image img {
+    margin-top: 50px;
+  width: 80%;
+  border-radius: 8px;
+}
+
+.description {
+  flex-basis: 70%;
+  text-align: start;
+  padding: 20px;
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.description p {
+  margin-bottom: 1em;
+}
+
+.description .highlight {
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.description .gr {
+  font-weight: bold;
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+}
+
+.description p:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+.right {
+  flex-basis: 60%;
+  position: relative;
+}
+
+.right h2 {
+  padding: 20px;
+  position: absolute;
+  top: 20px;
+  text-align: center;
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 60px;
+}
+
+.skills > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.skills > div > h3 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.skills > div > p {
+  margin: 0;
+  color: var(--text-color);
+}
+
+/* Styles pour les sections spécifiques */
+.langage,
+.db {
+  width: 100%;
+  padding: 20px;
+}
+.frameworks {
+  padding: 0;
+  width: 100%;
+}
+
+.langage h3,
+.frameworks h3,
+.db h3 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.language-circles,
+.framework-circles,
+.db-circles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skill-item,
+.framework-item,
+.db-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 120px;
+}
+
+@media (max-width: 768px) {
+  .about {
+    margin-top: 00px; /* Réduit la marge supérieure */
+    height: auto; /* Ajuste la hauteur pour les petits écrans */
+    padding: 10px; /* Ajoute un padding pour les petits écrans */
+  }
+
+  .container {
+    flex-direction: column; /* Empile les éléments verticalement sur les petits écrans */
+    gap: 10px; /* Réduit l'espace entre les éléments */
+  }
+
+  .left {
+    padding: 0px 10px;
+    flex-basis: 100%; /* Prend toute la largeur disponible */
+    position: static; /* Réinitialise la position relative */
+    display: flex; /* Nécessaire pour positionner la barre avec ::after */
+    flex-direction: column-reverse;
+}
+
+  .left::after {
+    display: none; /* Cache la barre latérale */
+  }
+
+  .image {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .image img {
+    margin-top: 0;
+
+    width: 100%;
+    max-width: 300px; /* Limite la largeur de l'image pour les petits écrans */
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .description {
+    text-align: left; /* Ajuste l'alignement du texte pour les petits écrans */
+    padding: 10px;
+    font-size: 0.9rem; /* Réduit la taille de la police */
+  }
+
+  .right {
+    flex-basis: 100%; /* Prend toute la largeur disponible */
+    position: static; /* Réinitialise la position relative */
+    padding-top: 20px; /* Ajoute un padding supérieur pour séparer le contenu */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrage du contenu */
+  }
+
+  .right h2 {
+    padding: 10px;
+    font-size: 1.2rem; /* Réduit la taille du titre */
+    position: static; /* Réinitialise la position absolue */
+    text-align: center; /* Centre le texte */
+  }
+
+  .skills {
+    padding-top: 0px; /* Réduit le padding supérieur */
+  }
+
+  .skill-item,
+  .framework-item,
+  .db-item {
+    width: 100px; /* Réduit la largeur des éléments */
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 0 5px; /* Réduit le padding pour les très petits écrans */
+  }
+
+  .container {
+    gap: 5px; /* Réduit l'espace entre les éléments */
+  }
+
+  .image img {
+    margin-top: 0;
+    max-width: 250px; /* Limite la largeur de l'image pour les très petits écrans */
+  }
+
+  .description {
+    font-size: 0.8rem; /* Réduit davantage la taille de la police */
+  }
+
+  .right h2 {
+    font-size: 1rem; /* Réduit encore la taille du titre */
+    padding: 5px; /* Réduit le padding */
+    position: static; /* Réinitialise la position absolue */
+  }
+
+  .skill-item,
+  .framework-item,
+  .db-item {
+    width: 80px; /* Réduit encore la largeur des éléments */
+  }
+}

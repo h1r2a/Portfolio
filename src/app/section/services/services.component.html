@@ -1,0 +1,14 @@
+<div class="services">
+    <h1>What I do?</h1>
+    <div class="container">
+      <div class="card" *ngFor="let service of services">
+        <div class="card-icon">
+          <fa-icon [icon]="service.icon"></fa-icon>
+        </div>
+        <div class="card-number">{{ service.id }}</div>
+        <h2>{{ service.title }}</h2>
+        <p>{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+  

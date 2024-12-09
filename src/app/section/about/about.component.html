@@ -1,0 +1,88 @@
+<div class="about">
+  <div class="container">
+    <div class="left">
+      <div class="image">
+        <!-- <img src="assets/pdp.jpg" alt="second-photo" /> -->
+        <img src="assets/diploma.JPG" alt="second-photo" />
+
+      </div>
+      <div class="description">
+        <p>
+          I'm ANDRIAMIHAJA Harentsoa Toavina, and I have recently earned my
+          <span class="highlight">Bachelor's degree</span> in Computer Science.
+          I am of <span class="gr">Malagasy</span> nationality.
+        </p>
+        <p>
+          I am currently in my 4th year of studying Computer Science and I am
+          <strong>seeking opportunities for internships or freelance work as a developer
+            or software architect, as well as a machine learning engineer.
+   </strong>        </p>
+      </div>
+    </div>
+    <div class="right">
+      <h2>My Skills</h2>
+      <div class="skills">
+        <div class="langage">
+          <h3>Programming Languages</h3>
+          <div class="language-circles">
+            <div *ngFor="let skill of langage" class="skill-item">
+              <div class="progress-circle">
+                <svg viewBox="0 0 100 100" class="circle-svg">
+                  <circle cx="50" cy="50" r="45" class="circle-bg"></circle>
+                  <circle cx="50" cy="50" r="45" class="circle-progress"
+                    [attr.stroke-dasharray]="getStrokeDashArray(skill.percentage)"
+                    [attr.stroke-dashoffset]="getStrokeDashOffset(skill.percentage)">
+                  </circle>
+                </svg>
+                <img [src]="skill.logo" alt="{{ skill.name }} logo" class="skill-logo" />
+              </div>
+              <h4>{{ skill.name }}</h4>
+            </div>
+          </div>
+        </div>
+        
+        
+
+        <div class="frameworks">
+          <h3>Web technologies</h3>
+          <div class="framework-circles">
+            <div *ngFor="let framework of frameworks" class="framework-item">
+              <div class="progress-circle">
+                <svg viewBox="0 0 100 100" class="circle-svg">
+                  <circle cx="50" cy="50" r="45" class="circle-bg"></circle>
+                  <circle cx="50" cy="50" r="45" class="circle-progress"
+                    [attr.stroke-dasharray]="getStrokeDashArray(framework.percentage)"
+                    [attr.stroke-dashoffset]="getStrokeDashOffset(framework.percentage)">
+                  </circle>
+                </svg>
+                <img [src]="framework.logo" alt="{{ framework.name }} logo" class="framework-logo" />
+              </div>
+              <h4>{{ framework.name }}</h4>
+            </div>
+          </div>
+        </div>
+        
+        <div class="db">
+          <h3>Databases</h3>
+          <div class="db-circles">
+            <div *ngFor="let database of databases" class="db-item">
+              <div class="progress-circle">
+                <svg viewBox="0 0 100 100" class="circle-svg">
+                  <circle cx="50" cy="50" r="45" class="circle-bg"></circle>
+                  <circle cx="50" cy="50" r="45" class="circle-progress"
+                    [attr.stroke-dasharray]="getStrokeDashArray(database.percentage)"
+                    [attr.stroke-dashoffset]="getStrokeDashOffset(database.percentage)">
+                  </circle>
+                </svg>
+                <img [src]="database.logo" alt="{{ database.name }} logo" class="db-logo" />
+              </div>
+              <h4>{{ database.name }}</h4>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
