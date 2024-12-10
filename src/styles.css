@@ -1,38 +1,34 @@
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    /* --background-color:  #333; */
-    --background-color: #f0f0f0;
-    --text-color: #333;
-    /* --text-color:#f0f0f0;; */
-  }
-  *{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-  }
+  --primary-color: #000; /* Noir pour les titres */
+  --secondary-color: #555; /* Gris moyen pour les liens */
+  --background-color: #fff; /* Blanc pour le fond */
+  --text-color: #000; /* Noir pour le texte */
+}
 
-  body {
-    font-family: 'Outfit', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--primary-color);
-  } 
-  
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+}
+
 a {
-    color: var(--secondary-color);
-  }
-  
+  color: var(--secondary-color);
+  transition: color 0.3s ease; /* Ajout d'une transition pour un effet de hover doux */
+}
 
-  
+a:hover {
+  color: var(--primary-color); /* Noir au survol */
+}

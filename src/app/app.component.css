@@ -21,6 +21,7 @@
   z-index: 1000;
   padding: 0 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre portée pour un effet de profondeur */
+  color: white;
 }
 li{
   margin: 10px;
@@ -35,7 +36,7 @@ li{
 }
 .menu ul li a:hover,
 .active a { /* `active` pour la page actuelle */
-  color: #fff !important; /* Couleur du texte directement */
+  color: wheat !important; /* Couleur du texte directement */
 
   border-bottom: solid white 4px; /* Coins arrondis pour un effet moderne */
 }
@@ -61,9 +62,9 @@ li{
 
 /* Style des éléments de menu */
 .menu ul li a {
+  color: white;
   cursor: pointer;
   font-size: 16px;
-  color: var(--text-color);
   padding: 10px 20px;
   text-decoration: none;
   transition: color 0.3s, background-color 0.3s, transform 0.3s; /* Transition pour une animation fluide */

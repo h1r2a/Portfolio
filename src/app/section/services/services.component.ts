@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faLaptopCode, faSearch, faPencilAlt, faPaintBrush, faBullhorn, faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { faLaptopCode, faExternalLinkAlt, faChartLine, faMobileAlt, faBrain, faDatabase } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 
 interface Service {
@@ -16,45 +16,46 @@ interface Service {
   standalone: true,
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css'],
-  imports: [FontAwesomeModule,CommonModule]
+  imports: [FontAwesomeModule, CommonModule]
 })
 export class ServicesComponent implements OnInit {
   services: Service[] = [
     {
       id: 1,
       title: 'Web Development',
-      description: 'Creating modern and responsive websites tailored to your needs.',
+      description: 'Creating modern and responsive websites using the latest technologies.',
       icon: faLaptopCode
     },
     {
       id: 2,
-      title: 'SEO Optimization',
-      description: 'Enhancing your website’s visibility on search engines through effective SEO strategies.',
-      icon: faSearch
+      title: 'Mobile Development',
+      description: 'Designing and building mobile apps for both Android and iOS.',
+      icon: faMobileAlt
+
     },
     {
       id: 3,
-      title: 'Content Creation',
-      description: 'Producing engaging content that resonates with your audience.',
-      icon: faPencilAlt
+      title: 'Machine Learning',
+      description: 'Developing algorithms and models for predictive analysis and automation.',
+      icon: faBrain
     },
     {
       id: 4,
-      title: 'Graphic Design',
-      description: 'Designing visually appealing graphics for your brand.',
-      icon: faPaintBrush
+      title: 'Web Scraping',
+      description: 'Extracting data from websites for analysis or automation purposes.',
+      icon: faExternalLinkAlt
     },
     {
       id: 5,
-      title: 'Digital Marketing',
-      description: 'Implementing strategies to promote your business online.',
-      icon: faBullhorn
+      title: 'Data Analysis',
+      description: 'Analyzing data to extract valuable insights and trends.',
+      icon: faChartLine
     },
     {
       id: 6,
-      title: 'Consulting',
-      description: 'Providing expert advice to help you achieve your business goals.',
-      icon: faBriefcase
+      title: 'Business Intelligence',
+      description: 'Implementing BI solutions for data-driven decision-making.',
+      icon: faDatabase
     }
   ];
 
@@ -62,9 +63,10 @@ export class ServicesComponent implements OnInit {
   currentIndex: number = 0;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
+
   ngOnInit() {
     this.breakpointObserver.observe([
-      '(max-width: 767px)' // Ajustez cette valeur selon vos besoins
+      '(max-width: 767px)' // Adjust this value as per your need
     ]).subscribe(result => {
       this.isMobile = result.matches;
     });

@@ -18,7 +18,7 @@ export class ProjectsComponent {
   projects = [
     {
       name: 'Fake Project 1',
-      description: 'A fake projects for lorem  derz',
+      description: 'A fake projects for lorem50 fdfsdkfmdsjmfmlkdsjflkdsjfmlkdsjfmlhds fsdkfjhdmskjfhsdlk dfhkdfjd jaoizueajz ',
       img: 'assets/fake-project.png',
     },
     {

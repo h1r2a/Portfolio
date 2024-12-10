@@ -1,54 +1,65 @@
-/* Styles généraux */
+/* Section générale */
 .services {
   margin-top: 60px;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
+  padding: 20px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  width: 90%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2%;
+  text-align: center;
+  background: #f9f9f9;
 }
 
 .services h1 {
-  padding-top: 20px;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
+/* Conteneur de la grille */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cartes par ligne sur desktop */
+  gap: 50px; /* Espacement de 50px entre les cartes */
+  justify-items: center; /* Centrer les cartes horizontalement */
+  align-items: center; /* Centrer les cartes verticalement */
+}
+
+/* Style des cartes */
 .card {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  border: 1px solid var(--primary-color);
-  border-radius: 8px;
-  padding: 20px;
-  width: 30%;
-  height: 200px;
+  width: 500px; /* Largeur des cartes */
+  height: 250px;
+  background: white;
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+/* Effet hover des cartes */
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Header de la carte */
+.card-header {
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  background: var(--primary-color);
+  color: white;
 }
 
 .card-number {
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: var(--primary-color);
-  color: var(--background-color);
+  background: white;
+  color: var(--primary-color);
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -59,74 +70,87 @@
   font-weight: bold;
 }
 
-.card h2 {
-  color: var(--primary-color);
+.card-icon {
+  font-size: 3rem;
   margin-bottom: 10px;
 }
 
-.card p {
+/* Corps de la carte */
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
   color: var(--text-color);
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .card {
-    width: 45%; /* Deux cartes par ligne */
-  }
+.card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  /* Styles généraux */
-  .services {
-    margin-top: 0px;
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .services h1 {
-    text-align: center;
-    border-top: 2px solid #cccccc;
-    width: 90%;
-    padding-top: 20px;
-  }
+/* Responsive (ajusté grâce à grid) */
+@media (max-width: 1024px) {
   .container {
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  .card {
-    width: 90%; /* Une carte par ligne */
-    height: auto; /* Ajuste la hauteur en fonction du contenu */
-    margin: 10px;
-  }
-
-  .card p {
-    display: none; /* Cacher la description en mode mobile */
+    grid-template-columns: repeat(2, 1fr); /* 2 cartes par ligne sur tablettes */
+    gap: 30px; /* Espacement réduit */
   }
 
   .card {
-    /* Modifier la mise en page de la carte en mode mobile */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px; /* Ajuster le padding */
+    width: 100%; /* Les cartes occupent toute la largeur disponible */
+    max-width: 450px; /* Limite la largeur à 450px */
+  }
+
+  .card-number {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
   }
 
   .card-icon {
-    font-size: 3rem; /* Ajustez la taille de l'icône pour plus de visibilité */
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
   }
 }
-.card-icon {
-  font-size: 2rem; /* Ajustez la taille de l'icône */
-  color: var(
-    --primary-color
-  ); /* Utilisez une couleur personnalisée si souhaité */
-  margin-bottom: 1rem;
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* 1 carte par ligne sur mobile */
+    gap: 20px; /* Espacement réduit */
+  }
+
+  .card {
+    width: 100%; /* Les cartes occupent toute la largeur disponible */
+    height: auto; /* La hauteur s'ajuste en fonction du contenu */
+  }
+
+  .card-number {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
 }
