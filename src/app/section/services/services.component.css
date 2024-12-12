@@ -27,7 +27,7 @@
 
 /* Style des cartes */
 .card {
-  width: 500px; /* Largeur des cartes */
+  width: calc(100vw / 3.5); /* Largeur des cartes */
   height: 250px;
   background: white;
   border-radius: 12px;
@@ -95,6 +95,12 @@
 
 /* Responsive (ajusté grâce à grid) */
 @media (max-width: 1024px) {
+  /* Section générale */
+.services {
+
+  height:auto;
+
+}
   .container {
     grid-template-columns: repeat(2, 1fr); /* 2 cartes par ligne sur tablettes */
     gap: 30px; /* Espacement réduit */

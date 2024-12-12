@@ -103,8 +103,8 @@
   }
   
   .actions button:hover {
-    background: var(--hover-color);
-    transform: scale(1.05);
+    background: gray;
+    transform: scale(1.005);
   }
   
   a {

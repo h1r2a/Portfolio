@@ -31,9 +31,10 @@
 .project {
     cursor: pointer;
     position: relative;
-    width: 30%; 
-    aspect-ratio: 19 / 6; 
-    margin:0 10px;
+    width: 30%;  /* Largeur par défaut pour les grands écrans */
+    aspect-ratio: 19 / 6;  /* Ratio d'aspect pour conserver la forme des cartes */
+    margin: 0 10px;
+    transition: all 0.3s ease-in-out;  /* Transition pour les ajustements */
 }
 
 .project-image {
@@ -46,7 +47,6 @@
     height: 100%;
     object-fit: cover;
     padding: 20px;
-
 }
 
 .project-title {
@@ -57,8 +57,6 @@
     font-size: 1.5rem;
     z-index: 2; /* Pour que le titre soit au-dessus de l'overlay */
 }
-
-
 
 .overlay {
     position: absolute;
@@ -77,17 +75,15 @@
     border-radius: 50px;
 }
 
-
 .project-image:hover .overlay {
     opacity: 1; /* Affiche l'overlay au survol de l'image */
 }
 
-
-.overlay h3{
+.overlay h3 {
     color: white;
-
 }
-.project-image:hover .projectTitle{
+
+.project-image:hover .projectTitle {
     color: white;
 }
 
@@ -124,4 +120,44 @@
 
 .github-btn, .play-btn {
     font-size: 16px;
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 1200px) {
+    .project {
+        width: 45%; /* Pour les écrans moyens, les cartes occupent 45% de la largeur */
+    }
+}
+
+@media (max-width: 768px) {
+    .project {
+        width: 90%; /* Sur les écrans de taille petite à moyenne, les cartes occupent 90% de la largeur */
+    }
+
+    .project-title {
+        font-size: 1.2rem;  /* Réduire la taille du titre pour les petits écrans */
+    }
+
+    .project-buttons {
+        flex-direction: column;  /* Empiler les boutons verticalement sur les petits écrans */
+    }
+
+    .project-buttons button {
+        width: 100%; /* Les boutons prennent toute la largeur disponible */
+        margin-bottom: 10px; /* Espacement entre les boutons */
+    }
+}
+
+@media (max-width: 480px) {
+    .project {
+        width: 100%; /* Sur les très petits écrans, chaque carte prend 100% de la largeur */
+    }
+
+    .project-title {
+        font-size: 1rem;  /* Réduire encore plus la taille du titre */
+    }
+
+    .project-buttons button {
+        padding: 8px 15px;  /* Réduire la taille des boutons sur petits écrans */
+    }
 }

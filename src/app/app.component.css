@@ -177,9 +177,11 @@ li{
     padding: 15px;
     text-align: center;
     display: block;
+    
   }
 
   .menu-toggle {
+    color: white;
     display: block;
   }
 
