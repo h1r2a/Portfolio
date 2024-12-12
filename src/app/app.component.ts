@@ -10,7 +10,7 @@ import { faGithub,faLinkedin,faFacebook } from '@fortawesome/free-brands-svg-ico
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, AboutComponent, CommonModule, ServicesComponent, ProjectsComponent,FontAwesomeModule],
+  imports: [ HomeComponent, AboutComponent, CommonModule, ServicesComponent, ProjectsComponent,FontAwesomeModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -79,6 +79,9 @@ li{
   transform: translateY(-2px); /* Effet de soulèvement pour plus de dynamisme */
 }
 
+.section{
+  height: 100%;
+}
 
 /* Style du bouton pour ouvrir/fermer le menu (en option si nécessaire) */
 .menu-toggle {
