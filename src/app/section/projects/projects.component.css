@@ -107,10 +107,13 @@
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    font-size: 1.5rem;
     gap: 8px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 50px;
 }
 
 .project-buttons button:hover {
@@ -157,7 +160,15 @@
         font-size: 1rem;  /* Réduire encore plus la taille du titre */
     }
 
+    .project-buttons{
+        display: flex;
+        justify-content: center;
+    }
+
     .project-buttons button {
-        padding: 8px 15px;  /* Réduire la taille des boutons sur petits écrans */
+        padding: 8px 0px;
+        border-radius: 50px; 
+        font-size: 1.5rem;
+        width: 50px;
     }
 }

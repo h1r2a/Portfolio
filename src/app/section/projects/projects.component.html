@@ -17,8 +17,8 @@
             <h3>{{ project.name }}</h3>
 
             <div class="project-buttons">
-              <button class="github-btn">
-                <fa-icon [icon]="faGithub"></fa-icon>
+              <button (click)="goToGithub(project.githubLink)">
+                <fa-icon [icon]="faGithub"></fa-icon> 
               </button>
               <!-- <button class="play-btn">
                 <fa-icon [icon]="faYoutube"></fa-icon>

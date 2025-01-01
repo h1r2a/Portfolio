@@ -27,6 +27,7 @@ export class ProjectsComponent implements OnInit {
         'assets/karvidy-1.png',
         'assets/karvidy-2.png'
       ],
+      githubLink: 'https://github.com/h1r2a/Kar-Vidy'
     },
     {
       name: 'TongaZa',
@@ -35,6 +36,7 @@ export class ProjectsComponent implements OnInit {
         'assets/tongaza-1.png',
         'assets/tongaza-2.png'
       ],
+      githubLink: 'https://github.com/h1r2a/TongaZa-smart-attendance-app'
     },
     {
       name: 'Direct Deal',
@@ -42,6 +44,7 @@ export class ProjectsComponent implements OnInit {
       images: [
         'assets/d-deal.png'
       ],
+      githubLink: 'https://github.com/h1r2a/Direct-Deal'
     },
     {
       name: 'Business-Training',
@@ -49,8 +52,20 @@ export class ProjectsComponent implements OnInit {
       images: [
         'assets/business-training.png'
       ],
-    },
+      githubLink: 'https://github.com/h1r2a/business-training'
+    },{
+      name: "IDEM Website",
+      description: "The IDEM website is a Progressive Web Application (PWA) that showcases the organization's mission to transform administrative processes with biometric systems. With a focus on fast loading times, offline functionality, and a responsive design, it provides an interactive and seamless user experience across all devices.",
+      images: [
+        "assets/idem.PNG",
+        "assets/idem2.PNG"
+      ],
+      githubLink: "https:idem-madagascar.com"
+    }
+    
+    
   ];
+
 
   ngOnInit() {
     this.currentImageIndex = this.projects.map(() => 0);
@@ -61,4 +76,12 @@ export class ProjectsComponent implements OnInit {
       });
     }, 2000); // 2000 ms = 2 seconds
   }
+
+
+
+  goToGithub(link: string): void {
+    window.open(link, '_blank');
+  }
+
 }
+

@@ -21,6 +21,9 @@ export class AppComponent {
   title = 'portfolio_angular';
   isMenuOpen = false;
   currentSection = 'home';
+  emailAddress = 'andriamihajaharena52@gmail.com';
+  
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }

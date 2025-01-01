@@ -25,4 +25,12 @@ export class HomeComponent implements OnInit{
     }, 1000);
   }
 
+  downloadResume(): void {
+    const link = document.createElement('a');
+    link.href = 'assets/resume.pdf';  // chemin vers le fichier
+    link.download = 'Harentsoa_Resume'; // nom du fichier
+    link.click();  // déclenche le téléchargement
+  }
+  
+
 }
