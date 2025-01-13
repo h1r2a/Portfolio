@@ -33,18 +33,22 @@ export class HomeComponent implements OnInit{
     this.isResumeDialogOpen = !this.isResumeDialogOpen
   }
 
-  downloadResume(type:string): void {
+  downloadResume(type: string): void {
     const link = document.createElement('a');
-    if(type=="eng"){
-      link.href = 'assets/Resume-Eng.pdf'; 
-    }else{
-      link.href = 'assets/Resume-Fr.pdf'; 
-
+    if (type === "eng") {
+      link.href = 'assets/Resume-Eng.pdf';
+    } else {
+      link.href = 'assets/Resume-Fr.pdf';
     }
     link.download = 'Harentsoa_Resume'; // nom du fichier
     link.click();  // déclenche le téléchargement
-    this.toggleResumeDialog();
+  
+    // Attendre un moment pour que le téléchargement ait lieu
+    setTimeout(() => {
+      this.toggleResumeDialog();  // Ferme le dialogue après le délai
+    }, 500);  // 500 ms est généralement suffisant pour que le téléchargement commence
   }
+  
 
   @HostListener('document:click', ['$event'])
   onClickOutside(event: MouseEvent) {
