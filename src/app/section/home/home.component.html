@@ -5,7 +5,22 @@
       <h1>Harentsoa</h1>
       <p>Software Developer</p>
       <div class="actions">
-            <button (click)="downloadResume()">Get My Resume</button>
+        <button (click)="toggleResumeDialog()">Get My Resume</button>
+        <div *ngIf="isResumeDialogOpen" class="dialog-overlay">
+          <div class="resume-dialog">
+            <div class="dialog-header">
+              <h2>
+                Choose the version you want
+                <span class="close-dialog" (click)="toggleResumeDialog()">x</span>
+              </h2>
+            </div>
+            <div class="resume-dialog-content">
+              <button class="resume-btn-english" (click)="downloadResume('eng')">ENGLISH</button>
+              <button class="resume-btn-french" (click)="downloadResume('fr')">FRENCH</button>
+            </div>
+          </div>
+        </div>
+
         <div class="social"></div>
       </div>
     </div>

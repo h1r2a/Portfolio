@@ -1,191 +1,374 @@
 :root {
-    --primary-color: #000; /* Noir */
-    --secondary-color: #555; /* Gris moyen */
-    --background-color: #fff; /* Blanc */
-    --text-color: #000; /* Noir pour le texte */
-    --hover-color: #333; /* Gris foncé pour les hover */
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    font-family: 'Outfit', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-  }
-  
+  --primary-color: #000;
+  /* Noir */
+  --secondary-color: #555;
+  /* Gris moyen */
+  --background-color: #fff;
+  /* Blanc */
+  --text-color: #000;
+  /* Noir pour le texte */
+  --hover-color: #333;
+  /* Gris foncé pour les hover */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.home {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home p {
+  text-align: center;
+}
+
+.dialog-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+}
+
+.resume-dialog {
+  height: 30%;
+  width: 25%;
+  background: var(--background-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+
+
+
+
+/* Styles pour le bouton français (comme avant) */
+div.resume-dialog-content .resume-btn-french {
+  background: linear-gradient(90deg, blue, white, red);
+  /* Drapeau français */
+  color: #000;
+  /* Texte noir */
+  border: 2px solid #000;
+  /* Bordure noire */
+  padding: 10px 20px;
+  /* Espacement intérieur */
+  font-weight: bold;
+  /* Texte en gras */
+  border-radius: 5px;
+  /* Coins arrondis */
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  /* Transition lente sur le fond, la bordure et l'ombre */
+}
+
+/* Nouveau style pour le bouton anglais */
+div.resume-dialog-content .resume-btn-english {
+  background-color: #fff;
+  /* Fond blanc */
+  color: #d00000;
+  /* Texte rouge foncé */
+  border: 2px solid #d00000;
+  /* Bordure rouge foncé */
+  padding: 10px 20px;
+  /* Espacement intérieur */
+  font-weight: bold;
+  /* Texte en gras */
+  border-radius: 5px;
+  /* Coins arrondis */
+  text-transform: uppercase;
+  /* Texte en majuscules */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Ombre légère */
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  /* Transition lente sur le fond, la bordure et l'ombre */
+}
+
+/* Supprimer le hover par défaut sur les boutons */
+div.resume-dialog-content .resume-btn-english:hover,
+div.resume-dialog-content .resume-btn-french:hover {
+  background-color: transparent;
+  /* Empêcher le changement de fond au hover */
+  cursor: pointer;
+  /* Le curseur change en pointer */
+  border-color: #000;
+  /* Changer la couleur de la bordure au hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Augmenter l'ombre au hover */
+}
+
+
+
+
+.resume-dialog-content {
+  width: 100%;
+  flex-basis: 80%;
+  display: flex;
+
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.dialog-header {
+  flex-basis: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.close-dialog {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  font-size: large;
+  color: #d00000;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centrer le texte dans le span */
+}
+
+.close-dialog:hover {
+  font-size: 1.2rem; /* Augmenter la taille du texte lors du hover */
+  color: #ff0000; /* Changer la couleur en rouge plus vif pour plus de contraste */
+}
+
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2%;
+}
+
+.img-ct {
+  height: 100%;
+  flex-basis: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-ct img {
+  height: 400px;
+  width: 400px;
+  border-radius: 200px;
+  border: none;
+  transition: border-color 1s;
+}
+
+.border {
+  border: var(--secondary-color) 5px dotted;
+  transition: border-color 1s;
+}
+
+.cta {
+  height: 100%;
+  flex-basis: 58%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cta h1 {
+  font-size: 5rem;
+  color: var(--primary-color);
+}
+
+.cta p {
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.actions {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions button {
+  padding: 15px;
+  border-radius: 15px;
+  background: var(--primary-color);
+  border: none;
+  font-size: 20px;
+  color: var(--background-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.actions button:hover {
+  background: gray;
+  transform: scale(1.005);
+}
+
+a {
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
   .home {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: auto;
+    padding: 20px;
   }
-  
-  .home p {
-    text-align: center;
-  }
-  
+
   .container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 2%;
+    flex-direction: column-reverse;
+    gap: 1rem;
   }
-  
+
   .img-ct {
-    height: 100%;
-    flex-basis: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-basis: auto;
+    margin-bottom: 20px;
   }
-  
+
   .img-ct img {
-    height: 400px;
-    width: 400px;
-    border-radius: 200px;
-    border: none;
-    transition: border-color 1s;
+    height: 300px;
+    width: 300px;
   }
-  
-  .border {
-    border: var(--secondary-color) 5px dotted;
-    transition: border-color 1s;
+
+  .cta h1 {
+    font-size: 3rem;
   }
-  
-  .cta {
-    height: 100%;
-    flex-basis: 58%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .cta p {
+    font-size: 1.5rem;
+  }
+
+  .actions {
+    margin-top: 20px;
     flex-direction: column;
   }
-  
-  .cta h1 {
-    font-size: 5rem;
-    color: var(--primary-color);
-  }
-  
-  .cta p {
-    font-size: 2rem;
-    text-decoration: none;
-    color: var(--secondary-color);
-  }
-  
-  .actions {
-    margin-top: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+
   .actions button {
-    padding: 15px;
-    border-radius: 15px;
-    background: var(--primary-color);
-    border: none;
-    font-size: 20px;
-    color: var(--background-color);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    padding: 10px;
   }
-  
-  .actions button:hover {
-    background: gray;
-    transform: scale(1.005);
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 10px;
   }
-  
-  a {
-    color: var(--secondary-color);
-    transition: color 0.3s ease;
+
+  .img-ct {
+    margin-bottom: 10px;
   }
-  
-  a:hover {
-    color: var(--hover-color);
+
+  .img-ct img {
+    height: 200px;
+    width: 200px;
   }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .home {
-      height: auto;
-      padding: 20px;
-    }
-  
-    .container {
-      flex-direction: column-reverse;
-      gap: 1rem;
-    }
-  
-    .img-ct {
-      flex-basis: auto;
-      margin-bottom: 20px;
-    }
-  
-    .img-ct img {
-      height: 300px;
-      width: 300px;
-    }
-  
-    .cta h1 {
-      font-size: 3rem;
-    }
-  
-    .cta p {
-      font-size: 1.5rem;
-    }
-  
-    .actions {
-      margin-top: 20px;
-      flex-direction: column;
-    }
-  
-    .actions button {
-      font-size: 16px;
-      padding: 10px;
-    }
+
+  .cta h1 {
+    font-size: 2rem;
   }
-  
-  @media (max-width: 480px) {
-    .home {
-      padding: 10px;
-    }
-  
-    .img-ct {
-      margin-bottom: 10px;
-    }
-  
-    .img-ct img {
-      height: 200px;
-      width: 200px;
-    }
-  
-    .cta h1 {
-      font-size: 2rem;
-    }
-  
-    .cta p {
-      font-size: 1rem;
-    }
-  
-    .actions {
-      margin-top: 10px;
-    }
-  
-    .actions button {
-      font-size: 14px;
-      padding: 8px;
-    }
+
+  .cta p {
+    font-size: 1rem;
   }
-  
+
+  .actions {
+    margin-top: 10px;
+  }
+
+  .actions button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* Styles de base pour la boîte de dialogue */
+.resume-dialog {
+  height: 30%;
+  width: 25%;
+  background: var(--background-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+  .resume-dialog {
+    width: 50%; /* Augmenter la largeur de la boîte de dialogue sur les écrans moyens */
+    height: auto; /* Ajuster la hauteur en fonction du contenu */
+  }
+
+  .resume-dialog-content {
+    flex-direction: column; /* Empiler les boutons de manière verticale */
+    gap: 10px; /* Espacement entre les boutons */
+  }
+
+  .resume-btn-english, .resume-btn-french {
+    padding: 12px 25px; /* Ajuster la taille des boutons */
+    font-size: 16px; /* Réduire la taille du texte des boutons */
+  }
+
+  .close-dialog {
+    font-size: 1rem; /* Réduire la taille du bouton de fermeture */
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-dialog {
+    width: 70%; /* Réduire encore la largeur sur les petits écrans */
+    padding: 15px; /* Espacement réduit */
+  }
+
+  .resume-btn-english, .resume-btn-french {
+    padding: 10px 20px; /* Réduire encore la taille des boutons */
+    font-size: 14px; /* Réduire la taille du texte des boutons */
+  }
+
+  .close-dialog {
+    font-size: 1rem; /* Réduire la taille du bouton de fermeture */
+  }
+
+  .dialog-header h2 {
+    font-size: 1.2rem; /* Ajuster la taille du titre */
+  }
+}

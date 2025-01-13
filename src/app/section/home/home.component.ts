@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component,OnInit } from '@angular/core';
+import { Component,HostListener,OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +10,9 @@ import { Component,OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit{
   isBorder = false;
+  isResumeDialogOpen = false;
+
+
   ngOnInit(): void {
     this.activateBorder()
   }
@@ -25,11 +28,33 @@ export class HomeComponent implements OnInit{
     }, 1000);
   }
 
-  downloadResume(): void {
+
+  toggleResumeDialog() : void {
+    this.isResumeDialogOpen = !this.isResumeDialogOpen
+  }
+
+  downloadResume(type:string): void {
     const link = document.createElement('a');
-    link.href = 'assets/resume.pdf';  // chemin vers le fichier
+    if(type=="eng"){
+      link.href = 'assets/Resume-Eng.pdf'; 
+    }else{
+      link.href = 'assets/Resume-Fr.pdf'; 
+
+    }
     link.download = 'Harentsoa_Resume'; // nom du fichier
     link.click();  // déclenche le téléchargement
+    this.toggleResumeDialog();
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent) {
+    const dialog = document.querySelector('.resume-dialog');
+    const dialogContent = document.querySelector('.dialog-header');
+
+    // Vérifie si le clic était à l'extérieur de la boîte de dialogue
+    if (this.isResumeDialogOpen && dialog && !dialog.contains(event.target as Node) && !dialogContent?.contains(event.target as Node)) {
+      this.toggleResumeDialog(); // Ferme la boîte de dialogue
+    }
   }
   
 
